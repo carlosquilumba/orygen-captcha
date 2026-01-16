@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+
+import React, { useState } from 'react';
 import './App.css';
 
+import CaptchaFrondorr from './CaptchaFrondorr';
+
 function App() {
+  const [captchaResult, setCaptchaResult] = useState(null);
+  const [error, setError] = useState('');
+
+  const handleCaptcha = (success) => {
+    if (success) {
+      setCaptchaResult(true);
+      setError('');
+    } else {
+      setCaptchaResult(false);
+      setError('No resolviste el captcha. Intenta de nuevo o pide ayuda.');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {captchaResult === true ? (
+        <div>
+          <h1>¡Lo resolviste!</h1>
+        </div>
+      ) : (
+        <div>
+          <h1>Orygen</h1>
+          <CaptchaFrondorr onValidate={handleCaptcha} />
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
+      )}
     </div>
   );
 }

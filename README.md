@@ -1,6 +1,20 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frondorcatpcha React App
+
+Esta aplicación muestra una página inicial con el mensaje "Hola página 1" y un captcha tipo frondorr (selección de imagen). Al resolver el captcha correctamente, muestra una segunda página con el mensaje "¡Lo resolviste!". Si el usuario falla el captcha, muestra un mensaje de error y sugerencias para intentar de nuevo o pedir ayuda.
+
+## Cómo ejecutar
+
+1. Instala las dependencias:
+	```bash
+	npm install
+	```
+2. Inicia la aplicación:
+	```bash
+	npm start
+	```
+
+La app estará disponible en http://localhost:3000
 
 ## Available Scripts
 
