@@ -26,7 +26,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <h1>Orygen</h1>
+          <h1>Hola mundo</h1>
           <CaptchaFrondorr onValidate={handleCaptcha} />
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
